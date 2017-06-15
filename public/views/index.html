@@ -17,10 +17,27 @@
 <body ng-app="myApp">
 
   <div class="container" ng-controller="HttpController as hc">
+    <h1>Giphy API Activity</h1>
     <div class="buttonGroup">
-      <button ng-click="hc.">Get a random Giphy!</button>
-      <input type="text" ng-model="hc.">
-      <button ng-click="hc.">Search</button>
+      <button ng-click="hc.random()" class="btn btn-default">Get a random Giphy!</button>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for..." ng-model='string'>
+        <span class="input-group-btn">
+        <button class="btn btn-default" ng-click="hc.search(string)" type="button">Go!</button>
+      </span>
+      </div>
+      <!-- /input-group -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <img ng-src="{{hc.randData.image_url}}">
+
+      </div>
+      <div class="col-md-6">
+        <div ng-repeat="gif in hc.searchData" class="col-md-6">
+          <img ng-src="{{gif.images.downsized.url}}">
+        </div>
+      </div>
     </div>
   </div>
 
