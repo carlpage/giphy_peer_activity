@@ -11,10 +11,19 @@
   <script src="scripts/script.js"></script>
   <script src="scripts/randomGif.js"></script>
   <script src="scripts/searchGif.js"></script>
-  <title>Giphy API Rerun</title>
+  <title>Giphy API Peer Activity</title>
 </head>
 
 <body ng-app="myApp">
 
+  <div class="container" ng-controller="HttpController as hc">
+    <div class="buttonGroup">
+      <button ng-click="hc.">Get a random Giphy!</button>
+      <input type="text" ng-model="hc.">
+      <button ng-click="hc.">Search</button>
+    </div>
+  </div>
+
 </body>
+
 </html>
